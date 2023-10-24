@@ -1,18 +1,10 @@
-<template>
-  <topo/>
-  <!-- <conteiner/> -->
+<template >
+  <div>
+    <h1>Planner Online</h1>
+  </div>
 </template>
-
 <script>
-import topo from "./topo.vue"
-// import conteiner from "./main.vue"
-
-export default{
-  components: { topo },
-  // components: { conteiner }
+export default {
+  
 }
 </script>
-
-<style>
-  
-</style>
