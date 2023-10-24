@@ -1,7 +1,5 @@
-# Vue 3 + Vite
+# A3 Usabilidade e Sistemas
+Repositório criado para o projeto A3 da faculdade São Judas Tadeu, projeto para a conclusão do 4° semestre
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
-
-## Recommended IDE Setup
-
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Planner
+O projeto se trata de um planner feito com Vue.js para o Frontend e NODE.JS para o back, com login no site, que é totalmente responsivo com aparelhos moveis e tem opçoes de salvar seus planners para ver depois em outro momento no mesmo site
