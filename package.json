@@ -1,5 +1,5 @@
 {
-  "name": "a3-usabilidade-sistemas",
+  "name": "aula07",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,10 +9,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "bootstrap": "^5.3.2",
     "vue": "^3.3.4"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.3",
-    "vite": "^4.4.5"
+    "vite": "^4.4.5",
+    "vite-plugin-windicss": "^1.9.1",
+    "windicss": "^3.5.6"
   }
 }
