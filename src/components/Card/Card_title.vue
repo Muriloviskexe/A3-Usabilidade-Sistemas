@@ -1,7 +1,12 @@
 <template>
-    <h2 class="p-2 m-1 rounded bg-slate-800 text-white text-center text-lg title">
-        {{ title }}
-    </h2>
+    <div class="p-2 m-1 rounded-xl bg-slate-800 text-white text-center flex justify-around">
+        <h2 class="text-lg">
+            {{ title }}
+        </h2>
+        <button>
+                <i class="fa-solid fa-plus"></i>
+        </button>
+    </div>
 </template>
 <script>
 const title = document.querySelector('.title')

@@ -1,19 +1,39 @@
 <template>
-  <div class="bg-slate-100" id="header">
-    <div class="flex justify-around  "><!--bg-slate-900 text-white -->
+  <div class="bg-slate-200" id="html">
+    <div  id="header">
       <h2 class="text-center p-4 text-5xl font-serif font-light">
-        {{ title }}
+          {{ title }}
       </h2>
-      <div class="flex gap-3 text-white text-xl">
+      
+      <div class="absolute right-8 top-2 text-lg">
+          <button v-on:click="darkMode()" class="m-2"><i class="fa-regular fa-moon"></i></button>
+          <button v-on:click="lightMode()"><i class="fa-regular fa-sun"></i></button>
+      </div>
+
+      <div class="absolute top-2 left-6">
+        <button v-on:click="openBar()"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+    <div class="h-screen w-300px bg-slate-900 fixed -left-100 top-0 z-10 flex justify-end text-white" id="sideBar">
+      <div class="flex gap-3 text-white text-xl absolute top-10 left-10" id="btn-users">
         <button><i class="fa-regular fa-user"></i></button>
         <button><i class="fa-regular fa-bell"></i></button>
       </div>
-      <div class="absolute right-8 top-2 text-lg">
-        <button v-on:click="darkMode"><i class="fa-solid fa-toggle-on">
-          <!-- <i class="fa-solid fa-toggle-off"></i> -->
-        </i></button>
+
+      <div class="absolute top-40 left-10">
+        <h5>Notas</h5>
+        <h5>Tutorial</h5>
+        <h5>Semanas</h5>
+        <h5>Criadores</h5>
+        <h5>Sair</h5>
       </div>
+
+      <div>
+        <button class="relative top-2 right-4 text-white transition ease-in-out duration-200" v-on:click="closeBar()"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      
     </div>
+
     <div class="grid grid-cols-3">
       <div v-for="item in cards">
         <Card :item="item"/>
@@ -45,12 +65,29 @@ export default {
   },
   methods: {
     darkMode: function(){
-      alert('oi')
-      document.getElementById('title').addClass('bg-slate-900 text-white')
-    }
+      document.getElementById('header').classList.add('bg-slate-900')
+      document.getElementById('header').classList.add('text-white')
+
+
+    },
+    lightMode: function(){
+      document.getElementById('header').classList.remove('bg-slate-900')
+      document.getElementById('header').classList.remove('text-white')
+    },
+    openBar: function(){
+      document.getElementById('sideBar').classList.remove('-left-100')
+      document.getElementById('sideBar').classList.add('-left-0')
+
+    },
+    closeBar: function() {
+      document.getElementById('sideBar').classList.add('-left-100')
+      document.getElementById('sideBar').classList.remove('-left-0')
+    },
   }
 }
 
 </script>
 
-<style></style>
+<style>
+
+</style>
