@@ -1,16 +1,16 @@
 <template>
-  <div class="bg-slate-200" id="html">
-    <div  id="header">
-      <h2 class="text-center p-4 text-5xl font-serif font-light">
-          {{ title }}
-      </h2>
+  <div class="bg-white h-200" id="all">
+    <div :class="´flex justify-center ´+styles[styleS]" id="header">
+        <h2 class="text-center p-4 text-5xl font-light font-mono">
+            {{ title }}
+        </h2>
       
-      <div class="absolute right-8 top-2 text-lg">
+      <div class="absolute right-8 top-2 text-lg hover:scale-110">
           <button v-on:click="darkMode()" class="m-2"><i class="fa-regular fa-moon"></i></button>
           <button v-on:click="lightMode()"><i class="fa-regular fa-sun"></i></button>
       </div>
 
-      <div class="absolute top-2 left-6">
+      <div class="absolute top-2 left-6" id="bar">
         <button v-on:click="openBar()"><i class="fa-solid fa-bars"></i></button>
       </div>
     </div>
@@ -29,7 +29,7 @@
       </div>
 
       <div>
-        <button class="relative top-2 right-4 text-white transition ease-in-out duration-200" v-on:click="closeBar()"><i class="fa-solid fa-xmark"></i></button>
+        <button class="relative top-2 right-4 text-white transition ease-in duration-200" v-on:click="closeBar()"><i class="fa-solid fa-xmark"></i></button>
       </div>
       
     </div>
@@ -49,6 +49,15 @@ export default {
   components: { Card },
   data() {
     return {
+      styles: {
+        dark: {
+        header: 'bg-slate-900'
+      },
+      light:{
+        header: 'bg-slate-100'
+      }
+      },
+      styleSelected: 'dark',
       title: "Planner Online",
       cards: [
         { title: 'Segunda-feira', body: 'Tarefas:' },
@@ -67,12 +76,21 @@ export default {
     darkMode: function(){
       document.getElementById('header').classList.add('bg-slate-900')
       document.getElementById('header').classList.add('text-white')
+      document.getElementById('all').classList.remove('bg-white')
+      document.getElementById('all').classList.add('bg-slate-600')
+      document.getElementById('card').classList.add('text-white')
+      document.getElementById('card').classList.remove('text-black')
 
 
     },
     lightMode: function(){
       document.getElementById('header').classList.remove('bg-slate-900')
       document.getElementById('header').classList.remove('text-white')
+      document.getElementById('all').classList.add('text-slate-900')
+      document.getElementById('all').classList.add('bg-white')
+      document.getElementById('card').classList.add('text-black')
+      document.getElementById('card').classList.remove('text-white')
+
     },
     openBar: function(){
       document.getElementById('sideBar').classList.remove('-left-100')
@@ -89,5 +107,9 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner&family=Indie+Flower&display=swap');
 
+#bar{
+  transition: 300 ease-in-out;
+}
 </style>

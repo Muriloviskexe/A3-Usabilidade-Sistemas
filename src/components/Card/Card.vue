@@ -1,6 +1,6 @@
 <template>
     
-    <div class="border border-black m-4 rounded-xl">
+    <div class="border border-black m-4 rounded-xl text-white" id="card">
         <Card_title :title="item.title" :icon="item.icon"/>
         <Card_body :text="item.body"/>
     </div>
