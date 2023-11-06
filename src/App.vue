@@ -1,4 +1,5 @@
 <template>
+
   <div class="bg-white h-300" id="all">
     <div class="flex justify-center" id="header">
         <h2 class="text-center p-4 text-5xl font-light font-EDU ">
