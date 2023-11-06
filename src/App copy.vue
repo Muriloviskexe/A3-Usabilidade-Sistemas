@@ -20,12 +20,12 @@
         <button><i class="fa-regular fa-bell"></i></button>
       </div>
 
-      <div class="absolute top-40 left-10 flex-col text-2xl grid justify-items-start gap-2">
-        <button class="hover:scale-110">Notas</button>
-        <button class="hover:scale-110">Tutorial</button>
-        <button class="hover:scale-110">Semanas</button>
-        <button class="hover:scale-110">Criadores</button>
-        <button class="hover:scale-110">Sair</button>
+      <div class="absolute top-40 left-10">
+        <h5>Notas</h5>
+        <h5>Tutorial</h5>
+        <h5>Semanas</h5>
+        <h5>Criadores</h5>
+        <h5>Sair</h5>
       </div>
 
       <div>
@@ -68,7 +68,7 @@ export default {
       document.getElementById('header').classList.add('bg-slate-900')
       document.getElementById('header').classList.add('text-white')
       document.getElementById('all').classList.remove('bg-white')
-      document.getElementById('all').classList.add('bg-slate-800')
+      document.getElementById('all').classList.add('bg-slate-600')
       document.getElementById('card').classList.add('text-white')
       document.getElementById('card').classList.remove('text-black')
 
