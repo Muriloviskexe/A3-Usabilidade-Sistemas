@@ -49,15 +49,6 @@ export default {
   components: { Card },
   data() {
     return {
-      styles: {
-        dark: {
-        header: 'bg-slate-900'
-      },
-      light:{
-        header: 'bg-slate-100'
-      }
-      },
-      styleSelected: 'dark',
       title: "Planner Online",
       cards: [
         { title: 'Segunda-feira', body: 'Tarefas:' },
