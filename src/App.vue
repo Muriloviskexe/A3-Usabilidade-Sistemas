@@ -50,6 +50,7 @@ export default {
   components: { Card },
   data() {
     return {
+
       title: "Planner Online",
       cards: [
         { title: 'Segunda-feira', body: 'Tarefas:' },
