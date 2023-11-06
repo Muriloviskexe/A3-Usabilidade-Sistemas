@@ -1,5 +1,5 @@
 <template>
-    <div class="p-3 m-1">
+    <div class="p-3 m-1 text-black font-bold">
         {{ text }}
     </div>
 </template>
