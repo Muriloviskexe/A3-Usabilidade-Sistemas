@@ -1,7 +1,7 @@
 <template>
-  <div class="bg-white h-200" id="all">
-    <div class="flex justify-center " id="header">
-        <h2 class="text-center p-4 text-5xl font-light font-mono">
+  <div class="bg-white h-300" id="all">
+    <div class="flex justify-center" id="header">
+        <h2 class="text-center p-4 text-5xl font-light font-EDU ">
             {{ title }}
         </h2>
       
@@ -10,10 +10,11 @@
           <button v-on:click="lightMode()"><i class="fa-regular fa-sun"></i></button>
       </div>
 
-      <div class="absolute top-2 left-6" id="bar">
-        <button v-on:click="openBar()"><i class="fa-solid fa-bars"></i></button>
+      <div class="absolute top-2 left-6" id="bar">      
+          <button v-on:click="openBar()"><i class="fa-solid fa-bars"></i></button>
       </div>
     </div>
+
     <div class="h-screen w-300px bg-slate-900 fixed -left-100 top-0 z-10 flex justify-end text-white" id="sideBar">
       <div class="flex gap-3 text-white text-xl absolute top-10 left-10" id="btn-users">
         <button><i class="fa-regular fa-user"></i></button>
@@ -29,7 +30,7 @@
       </div>
 
       <div>
-        <button class="relative top-2 right-4 text-white transition ease-in duration-200" v-on:click="closeBar()"><i class="fa-solid fa-xmark"></i></button>
+          <button class="relative top-2 right-4 text-white" v-on:click="closeBar()"><i class="fa-solid fa-xmark"></i></button>
       </div>
       
     </div>
@@ -49,7 +50,6 @@ export default {
   components: { Card },
   data() {
     return {
-
       title: "Planner Online",
       cards: [
         { title: 'Segunda-feira', body: 'Tarefas:' },
@@ -59,6 +59,8 @@ export default {
         { title: 'Sexta-feira', body: 'Tarefas:' },
         { title: 'Sabado', body: 'Tarefas:' },
         { title: 'Domingo', body: 'Tarefas:' },
+        { title: 'Notas', body: 'Notas' },
+
 
   
       ]
@@ -72,6 +74,9 @@ export default {
       document.getElementById('all').classList.add('bg-slate-600')
       document.getElementById('card').classList.add('text-white')
       document.getElementById('card').classList.remove('text-black')
+      document.getElementById('body').classList.remove('text-black')
+      document.getElementById('body').classList.add('text-white')
+
 
 
     },
@@ -82,6 +87,8 @@ export default {
       document.getElementById('all').classList.add('bg-white')
       document.getElementById('card').classList.add('text-black')
       document.getElementById('card').classList.remove('text-white')
+      document.getElementById('body').classList.add('text-black')
+      document.getElementById('body').classList.remove('text-white')
 
     },
     openBar: function(){
@@ -100,5 +107,6 @@ export default {
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner&family=Indie+Flower&display=swap');
+
 
 </style>
