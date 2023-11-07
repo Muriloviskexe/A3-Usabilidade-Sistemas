@@ -36,8 +36,20 @@
     </div>
 
     <div class="grid grid-cols-3">
-      <div v-for="item in cards">
-        <Card :item="item"/>
+      <div class="border border-black m-4 rounded-xl text-white" id="card">
+        <div class="p-2 m-1 rounded-xl bg-slate-900 text-white text-center flex justify-around font-EDU">
+          <h2 class="text-2xl">
+            {{ title }}
+          </h2>
+          <button>
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+
+
+        <div class="p-3 m-1 text-black font-bold">
+        {{ text }}
+        </div>
       </div>
     </div>
   </div>
