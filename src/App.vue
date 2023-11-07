@@ -26,6 +26,10 @@
               <button class="hover:scale-110">Criadores</button>
               <button class="hover:scale-110">Sair</button>
             </div>
+
+            <div>
+            <button class="relative top-2 right-4 text-white" @click="show = !show"><i class="fa-solid fa-xmark"></i></button>
+            </div>
           </div>
         </Transition>
       
@@ -120,7 +124,7 @@ export default {
 
 .v-enter-active,
 .v-leave-active {
-  transition: opacity 0.5s ease;
+  transition: opacity 200ms ease-in-out;
 }
 
 .v-enter-from,
