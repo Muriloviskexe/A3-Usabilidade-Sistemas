@@ -12,7 +12,7 @@ import Card_body from './Card_body.vue';
 export default {
     components: { Card_title, Card_body},
     props: {
-        item: { default: null, type: Object, id }
+        item: { default: null, type: Object }
     }
 }
 </script>
