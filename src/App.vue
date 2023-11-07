@@ -39,7 +39,10 @@
         <Card :item="item"/>
       </div>
     </div>
-  </div>
+    
+</div>
+
+ 
 </template>
 
 <script>
@@ -49,6 +52,9 @@ export default {
   components: { Card },
   data() {
     return {
+
+      show: false,
+
       title: "Planner Online",
       cards: [
         { title: 'Segunda-feira', body: 'Tarefas:' },
@@ -99,4 +105,5 @@ export default {
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner&family=Indie+Flower&display=swap');
+
 </style>
