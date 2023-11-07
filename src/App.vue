@@ -10,28 +10,12 @@
           <button v-on:click="lightMode()"><i class="fa-regular fa-sun"></i></button>
       </div>
 
-      <div class="absolute top-2 left-6" id="bar">      
-          <button v-on:click="openBar()"><i class="fa-solid fa-bars"></i></button>
-      </div>
-    </div>
-
-    <div class="h-screen w-300px bg-slate-900 fixed -left-100 top-0 z-10 flex justify-end text-white" id="sideBar">
-      <div class="flex gap-3 text-white text-xl absolute top-10 left-10" id="btn-users">
-        <button><i class="fa-regular fa-user"></i></button>
-        <button><i class="fa-regular fa-bell"></i></button>
-      </div>
-
-      <div class="absolute top-40 left-10">
-        <h5>Notas</h5>
-        <h5>Tutorial</h5>
-        <h5>Semanas</h5>
-        <h5>Criadores</h5>
-        <h5>Sair</h5>
-      </div>
-
       <div>
-          <button class="relative top-2 right-4 text-white" v-on:click="closeBar()"><i class="fa-solid fa-xmark"></i></button>
+        <button @click="show = !show">Toggle</button>
       </div>
+        <Transition>
+          <p v-if="show">hello</p>
+        </Transition>
       
     </div>
 
@@ -62,6 +46,8 @@ export default {
   components: { Card },
   data() {
     return {
+      show:false,
+
       title: "Planner Online",
       cards: [
         { title: 'Segunda-feira', body: 'Tarefas:' },
@@ -120,5 +106,13 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner&family=Indie+Flower&display=swap');
 
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
 
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
 </style>
