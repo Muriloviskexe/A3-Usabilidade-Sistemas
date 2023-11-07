@@ -10,11 +10,23 @@
           <button v-on:click="lightMode()"><i class="fa-regular fa-sun"></i></button>
       </div>
 
-      <div>
-        <button @click="show = !show">Toggle</button>
+      <div class="absolute top-2 left-6" id="bar">
+        <button @click="show = !show"><i class="fa-solid fa-bars"></i></button>
       </div>
         <Transition>
-          <p v-if="show">hello</p>
+            <div v-if="show" class="h-screen w-300px bg-slate-900 fixed left-0 top-0 z-10 flex justify-end text-white"><div class="flex gap-3 text-white text-xl absolute top-10 left-10">
+              <button><i class="fa-regular fa-user"></i></button>
+              <button><i class="fa-regular fa-bell"></i></button>
+            </div>
+
+            <div class="absolute top-40 left-10 flex-col text-2xl grid justify-items-start gap-2">
+              <button class="hover:scale-110">Notas</button>
+              <button class="hover:scale-110">Tutorial</button>
+              <button class="hover:scale-110">Semanas</button>
+              <button class="hover:scale-110">Criadores</button>
+              <button class="hover:scale-110">Sair</button>
+            </div>
+          </div>
         </Transition>
       
     </div>
