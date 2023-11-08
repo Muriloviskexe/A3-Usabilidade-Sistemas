@@ -13,6 +13,7 @@
       <div class="absolute top-2 left-6" id="bar">
         <button @click="show = !show"><i class="fa-solid fa-bars"></i></button>
       </div>
+
         <Transition>
             <div v-if="show" class="h-screen w-300px bg-slate-900 fixed left-0 top-0 z-10 flex justify-end text-white"><div class="flex gap-3 text-white text-xl absolute top-10 left-10">
               <button><i class="fa-regular fa-user"></i></button>
@@ -43,23 +44,17 @@
               Segunda-Feira
             </h2>
 
-            <transition name="openPop">
-              <ConfirmDialog v-if="pop" @ok="onOk()" @cancel="onCancel()"></ConfirmDialog>
-            </transition>
-
-            <button @click="popUp">
+            <button @click="adcTarefa">
               <i class="fa-solid fa-plus"></i>
             </button>
-            
           </div>
 
           <div class="p-3 m-1 text-black font-bold font-mono text-lg">
             <input type="text" class="border" v-model="caixa_tarefa"/>
             <p>Tarefas:</p>
-            <p>{{caixa_tarefa}}</p>
 
             <div v-for="p in tarefas">
-              <div class="border rounded p-1 font-semibold text-lg m-1">
+              <div class=" p-1 font-mono text-lg m-1">
                 {{ p }}
               </div>
           </div>
@@ -166,17 +161,14 @@
 
       </div>
     </div>
-    </div>
-
-  
+    
+  </div>
 </template>
 
-<script>
-
+<script >
 export default {
   data() {
     return {
-
       tarefas: [],
 
       caixa_tarefa: '',
@@ -228,10 +220,12 @@ export default {
     },
 
     adcTarefa: function(){
-      let temp = this.caixa_tarefa.toUpperCase()
+      let temp = this.caixa_tarefa.charAt(0).toUpperCase() + this.caixa_tarefa.slice(1)
       this.tarefas.push(temp)
       this.caixa_tarefa = ''
     }
+
+    
   }
 }
 
@@ -257,4 +251,6 @@ export default {
 .darkTheme{
   background-color: #2d2f31;
 }
+
+
 </style>
