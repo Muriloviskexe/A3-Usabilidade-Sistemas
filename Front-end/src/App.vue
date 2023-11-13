@@ -6,8 +6,8 @@
         </h2>
       
       <div class="absolute right-8 top-2 text-lg hover:scale-110">
-          <button v-on:click="darkMode()" class="m-2"><i class="fa-regular fa-moon"></i></button>
-          <button v-on:click="lightMode()"><i class="fa-regular fa-sun"></i></button>
+          <button v-on:click="darkMode()" class="monstrar" id="botaoNoite"><i class="fa-regular fa-moon"></i></button>
+          <button v-on:click="lightMode()" class="esconder" id="botaoDia"><i class="fa-regular fa-sun"></i></button>
       </div>
 
       <div class="absolute top-2 left-6" id="bar">
@@ -185,13 +185,15 @@ export default {
 
       document.getElementById('all').classList.remove('bg-white')
       document.getElementById('all').classList.add('bg-slate-900')
-    
+
       document.getElementById('body').classList.remove('text-black')
       document.getElementById('body').classList.add('text-white')
 
       document.getElementsByName('cartao').classList.remove('border-black')
       document.getElementsByName('cartao').classList.add('border-white')
 
+      document.getElementById('botaoNoite').classList.add('esconder')
+      document.getElementById('botaoDia').classList.remove('esconder')
 
 
     },
@@ -248,8 +250,16 @@ export default {
   opacity: 0;
 }
 
-.darkTheme{
-  background-color: #2d2f31;
+#botaoNoite{
+    position: absolute;
+}
+
+#botaoDia{
+    position: absolute;
+}
+
+.esconder{
+  display: none;
 }
 
 
