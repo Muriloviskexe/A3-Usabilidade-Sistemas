@@ -1,5 +1,97 @@
+:root{
+    --darkblue: #002545;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner&family=Indie+Flower&display=swap');
+
 * {
     border: none;
     padding: 0;
     margin: 0;
+}
+
+.cabeca{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px;
+}
+
+.titulo{
+    font-size: 56pt;
+    font-family: 'Edu TAS Beginner', cursive;
+    color: var(--darkblue);
+    font-weight: bold;
+}
+
+.SideBar{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    margin: 15px;
+    color: black;
+    font-size: 16pt;
+}
+
+.DarkModeButtons{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    margin: 15px;
+}
+
+.DarkModeButtons > button {
+    font-size: 20pt;
+    background-color: #fff;
+    color: black;
+}
+
+main{
+    display: grid;
+    grid-template-columns: repeat(3, 350px);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    grid-gap: 20px;
+}
+
+.conteiner-card{
+    border: 1px solid black;
+    border-radius: 10%;
+    height: 200px;
+    width: 300px;
+}
+
+.header-card{
+    background-color: var(--darkblue);
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    border-radius: 20px 20px 0px 0px; 
+    height: 40px;
+}
+
+.header-card > h2{
+    font-size: 20pt;
+}
+
+.header-card > button{
+    background-color: #002545;
+    color: white;
+    font-size: 16pt;
+}
+
+
+.card-body{
+    font-size: 16pt;
+    font-weight: bold;
+    font-family: monospace;
+}
+
+.card-body > input{
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 20px;
+    margin-left: 60px;
 }
