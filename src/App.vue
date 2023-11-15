@@ -37,9 +37,8 @@
     <div class="grid grid-cols-3">
       <div v-for="item in cards">
         <Card :item="item"/>
-      </div>
+      </div>  
     </div>
-    
 </div>
 
  
@@ -64,6 +63,8 @@ export default {
         { title: 'Sexta-feira', body: 'Tarefas:' },
         { title: 'Sabado', body: 'Tarefas:' },
         { title: 'Domingo', body: 'Tarefas:' },
+        { title: 'Notas', body: 'anotações:' },
+
 
   
       ]
