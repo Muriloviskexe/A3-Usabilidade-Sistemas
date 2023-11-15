@@ -34,23 +34,64 @@ document.querySelector('.text-tarefa').classList.remove('text-dark')
 
 }
 
-function adcTarefa(){
-    var tarefa = document.querySelector('#input-segunda');
-     const value = tarefa.value.trim(); // Remova espaços em branco antes e depois do valor
+function adcTarefa(diaDaSemana) {
+    var tarefaInput = document.querySelector(`#input-${diaDaSemana}`);
+    var listaTarefas = document.getElementById(diaDaSemana);
 
-     if (value !== '') {
-         const segunda = document.getElementById('segunda');
-         const novaTarefa = document.createElement('li');
-         novaTarefa.textContent = value;
-         segunda.appendChild(novaTarefa);
+    const value = tarefaInput.value.trim();
 
-         tarefa.value = ''; // Limpa o campo de entrada após adicionar a tarefa
-     } else {
-         null
-     }
+    if (value !== '') {
+        const novaTarefa = document.createElement('li');
+        novaTarefa.textContent = value;
+        listaTarefas.appendChild(novaTarefa);
+
+        tarefaInput.value = ''; // Limpa o campo de entrada após adicionar a tarefa
+    } else {
+        null
+    }
+}
+
+function adicionarTarefaBotao(diaDaSemana) {
+    adcTarefa(diaDaSemana);
 }
 
 document.addEventListener('keydown', function (event) {
     if (event.keyCode !== 13) return;
-    adcTarefa()
-})
+    adcTarefa('segunda'); // Substitua 'segunda' pelo dia da semana desejado
+    adcTarefa('terca');
+    adcTarefa('quarta');
+    adcTarefa('quinta');
+    adcTarefa('sexta');
+    adcTarefa('Sabado');
+    adcTarefa('Domingo');
+});
+
+
+document.querySelector('#adicionar-segunda').addEventListener('click', function () {
+    adicionarTarefaBotao('segunda');
+});
+
+// Repita o processo para os outros dias da semana
+document.querySelector('#adicionar-terca').addEventListener('click', function () {
+    adicionarTarefaBotao('terca');
+});
+
+document.querySelector('#adicionar-quarta').addEventListener('click', function () {
+    adicionarTarefaBotao('quarta');
+});
+
+document.querySelector('#adicionar-quinta').addEventListener('click', function () {
+    adicionarTarefaBotao('quinta');
+});
+
+document.querySelector('#adicionar-sexta').addEventListener('click', function () {
+    adicionarTarefaBotao('sexta');
+});
+
+document.querySelector('#adicionar-Sabado').addEventListener('click', function () {
+    adicionarTarefaBotao('Sabado');
+});
+
+document.querySelector('#adicionar-Domingo').addEventListener('click', function () {
+    adicionarTarefaBotao('Domingo');
+});
