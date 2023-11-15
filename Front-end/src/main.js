@@ -1,44 +1,94 @@
 
 function darkMode(){
+    // Esconde o botão de modo escuro e mostra o de modo claro
+    document.getElementById('dark').classList.add('hide')
+    document.getElementById('light').classList.remove('hide')
 
-document.getElementById('dark').classList.add('hide')
-document.getElementById('light').classList.remove('hide')
-document.querySelector('#titulo').classList.add('tituloDark')
-document.querySelector('#titulo').classList.remove('tituloLight')
-document.querySelector('#cabeca').classList.add('cabecaDark')
-document.querySelector('.DarkModeButtons').classList.add('cabecaDark')
-document.querySelector('html').classList.add('darkPage')
-document.querySelector('#conteiner-card').classList.add('conteiner-cardDark')
-document.querySelector('#conteiner-card').classList.remove('conteiner-card')
-document.querySelector('#header-card').classList.add('header-cardDark')
-document.querySelector('#header-card').classList.remove('header-card')
-document.querySelector('.text-tarefa').classList.remove('text-light')
-document.querySelector('.text-tarefa').classList.add('text-dark')
+    // Altera Titulo
+    document.querySelector('#titulo').classList.add('tituloDark')
+    document.querySelector('#titulo').classList.remove('tituloLight')
 
+    //Altera cabeçalho
+    document.querySelector('#cabeca').classList.add('cabecaDark')
+    document.querySelector('.DarkModeButtons').classList.add('cabecaDark')
+
+    //Altera todo o fundo
+    document.querySelector('html').classList.add('darkPage')
+
+    //Altera estilo dos cartoes
+    document.querySelectorAll('.conteiner-card').forEach(function (card) {
+        card.classList.add('conteiner-cardDark');
+        card.classList.remove('conteiner-card');
+    });
+
+    //Altera cabeçalho dos cartoes
+    document.querySelectorAll('.header-card').forEach(function (header) {
+        header.classList.add('header-cardDark');
+        header.classList.remove('header-card');
+    });
+
+    // Altera o estilo do texto da tarefa
+    document.querySelectorAll('.text-tarefa').forEach(function (textTarefa) {
+        textTarefa.classList.remove('text-light');
+        textTarefa.classList.add('text-dark');
+    });
+
+    //Altera as tarefas
+    document.querySelectorAll('.tarefas').forEach(function (tarefas){
+        tarefas.classList.add('tarefasDark')
+        tarefas.classList.remove('tarefasLight')
+
+})
 }
 
-function lightMode(){
+function lightMode() {
+    // Esconde o botão de modo claro e mostra o de modo escuro
+    document.getElementById('dark').classList.remove('hide');
+    document.getElementById('light').classList.add('hide');
 
-document.getElementById('dark').classList.remove('hide')
-document.getElementById('light').classList.add('hide')
-document.querySelector('#titulo').classList.remove('tituloDark')
-document.querySelector('#titulo').classList.add('tituloLight')
-document.querySelector('#cabeca').classList.remove('cabecaDark')
-document.querySelector('html').classList.remove('darkPage')
-document.querySelector('#conteiner-card').classList.remove('conteiner-cardDark')
-document.querySelector('#conteiner-card').classList.add('conteiner-card')
-document.querySelector('#header-card').classList.remove('header-cardDark')
-document.querySelector('#header-card').classList.add('header-card')
-document.querySelector('.text-tarefa').classList.add('text-light')
-document.querySelector('.text-tarefa').classList.remove('text-dark')
+    // Altera o estilo do título
+    document.querySelector('#titulo').classList.remove('tituloDark');
+    document.querySelector('#titulo').classList.add('tituloLight');
 
+    // Altera o estilo do cabeçalho
+    document.querySelector('#cabeca').classList.remove('cabecaDark');
+
+    // Remove o estilo de modo escuro do HTML
+    document.querySelector('html').classList.remove('darkPage');
+
+    // Altera o estilo dos cartões
+    document.querySelectorAll('.conteiner-cardDark').forEach(function (card) {
+        card.classList.remove('conteiner-cardDark');
+        card.classList.add('conteiner-card');
+    });
+
+    // Altera o estilo dos cabeçalhos dos cartões
+    document.querySelectorAll('.header-cardDark').forEach(function (header) {
+        header.classList.remove('header-cardDark');
+        header.classList.add('header-card');
+    });
+
+    // Altera o estilo do texto da tarefa
+    document.querySelectorAll('.text-tarefa').forEach(function (textTarefa) {
+        textTarefa.classList.add('text-light');
+        textTarefa.classList.remove('text-dark');
+    });
+
+    //Altera as tarefas
+    document.querySelectorAll('.tarefas').forEach(function (tarefas){
+        tarefas.classList.remove('tarefasLight')
+        tarefas.classList.remove('tarefasDark')
+
+})
 }
+
 
 function adcTarefa(diaDaSemana) {
     var tarefaInput = document.querySelector(`#input-${diaDaSemana}`);
     var listaTarefas = document.getElementById(diaDaSemana);
 
-    const value = tarefaInput.value.trim();
+    const value = capitalizeFirstLetter(tarefaInput.value.trim());
+
 
     if (value !== '') {
         const novaTarefa = document.createElement('li');
@@ -95,3 +145,7 @@ document.querySelector('#adicionar-Sabado').addEventListener('click', function (
 document.querySelector('#adicionar-Domingo').addEventListener('click', function () {
     adicionarTarefaBotao('Domingo');
 });
+
+function capitalizeFirstLetter(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+}
