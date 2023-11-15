@@ -11,15 +11,14 @@
     border: none;
     padding: 0;
     margin: 0;
+    transition: 300ms ease-in-out;
 }
 
 button {
     cursor: pointer;
 }
 
-html{
-    transition: 500ms all ;
-}
+
 
 /* --------------------------------------------------------------- */
                         /* HEADER */
@@ -84,7 +83,7 @@ main{
 .conteiner-card{
     border: 1px solid black;
     border-radius: 10%;
-    height: 200px;
+    min-height: 200px;
     width: 300px;
 }
 
@@ -134,17 +133,18 @@ main{
     padding: 2px;
 }
 
-.textTarefas{
+.text-tarefa{
     margin: 10px;
+}
+
+.text-light{
     color: black;
 }
 
-.adctarefa:hover{
-    transition: 300ms ease-in-out;
-    width: 40px;
-    border-radius: 10px;
-    background-color: #00335f;
+.tarefas{
+    padding: 10px;
 }
+
 
 /* ----------------------------------------- */
         /* DARK MODE */
@@ -195,13 +195,14 @@ background-color: #002545;
     color: var(--darkblue);
     border-radius: 20px 20px 0px 0px; 
     height: 40px;
+    font-size: 14pt;
 }
 .header-cardDark > button{
     background: none;
+    font-size: 16pt;
 }
 
-.textTarefasDark{
-    margin: 10px;
+.text-dark{
     color: white;
 }
 
