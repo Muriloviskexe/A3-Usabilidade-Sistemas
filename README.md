@@ -1,22 +1,32 @@
-# UDWM 16/10
+<h1 align="center">A3 Planner Semanal</h1>
 
-## Para clonar este repositório:
+## Sobre:
+Projeto criado para a A3 das materias de usabilidade web e sistemas, desenvolvimento WEB de um Planner hospedado Online disponivel para qualquer pessoa, o Planner inclui funções como 
+
+<ul> 
+<li>Adicionar tarefas</li>
+<li>Remover tarefas</li>
+<li>Logar com conta</li>
+<li>Adicionar horario</li>
+</ul>
+
+
+
+<img src="https://img.shields.io/badge/NODE-v16.17.0-red
+"/>
+<img src="https://img.shields.io/badge/NPM-v8.15.0-purple
+"/>
+<img src="https://img.shields.io/badge/frontend-Vue.js-blue
+"/>
+<img src="https://img.shields.io/badge/Backend-NODE.js-green
+"/>
+
+
+## Visualizando o Projeto na sua maquina:
 
 Abrir terminal em uma pasta e rodar os comandos:
 
-```git clone https://github.com/mmamorim/UDWM1610.git```
-
-Entrar na pasta criada
-
-```npm install```
-
-e para rodar 
-
-```npm run dev```
-
-## Para criar um novo projeto do zero:
-
-```npm create vite@latest```
+```git clone https://github.com/Muriloviskexe/A3-Usabilidade-Sistemas.git```
 
 Entrar na pasta criada
 
@@ -27,48 +37,5 @@ e para rodar
 ```npm run dev```
 
 
-## Para instalar o bootstrap
 
-executar: 
 
-```npm install bootstrap```
-
-```
-// src/main.js
-import { createApp } from "vue";
-import App from "./App.vue";
-
-import "bootstrap/dist/css/bootstrap.css";
-
-createApp(App).mount("#app");
-
-import "bootstrap/dist/js/bootstrap.js";
-```
-
-## Para instalar o tailwindcss com windcss
-
-executar: 
-
-```npm install -D vite-plugin-windicss windicss```
-
-No arquivo de configuração do Vite ```vite.config.js``` adicionar:
-
-```
-import WindiCSS from 'vite-plugin-windicss'
-
-export default {
-  plugins: [
-    WindiCSS(),
-  ],
-}
-```
-No arquivo ```main.js``` adicionar:
-
-```
-import 'virtual:windi.css'
-```
-
-## Aula 23/10
-
-* Componentes aninhados
-* Passando propriedades para componentes (props)
