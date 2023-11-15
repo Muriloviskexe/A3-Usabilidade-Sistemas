@@ -1,9 +1,11 @@
+/* ---------------------------------------------------------- */
+                        /* GERAL */
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner&family=Indie+Flower&display=swap');
+
 :root{
     --darkblue: #002545;
 }
-
-
-@import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner&family=Indie+Flower&display=swap');
 
 * {
     border: none;
@@ -11,18 +13,30 @@
     margin: 0;
 }
 
-.cabeca{
+button {
+    cursor: pointer;
+}
+
+html{
+    transition: 500ms all ;
+}
+
+/* --------------------------------------------------------------- */
+                        /* HEADER */
+.cabecaLight{
+    transition: 500ms all;
     display: flex;
     flex-direction: row;
     justify-content: center;
     padding: 20px;
 }
 
-.titulo{
+
+.tituloLight{
     font-size: 56pt;
     font-family: 'Edu TAS Beginner', cursive;
     color: var(--darkblue);
-    font-weight: bold;
+    font-weight: bolder;
 }
 
 .SideBar{
@@ -34,19 +48,28 @@
     font-size: 16pt;
 }
 
+#light{
+    transition: 400ms all;
+    color: white;
+    background-color: transparent;
+}
+
 .DarkModeButtons{
     position: absolute;
     top: 10px;
-    right: 10px;
+    right: 40px;
     margin: 15px;
 }
 
 .DarkModeButtons > button {
+    position: absolute;
     font-size: 20pt;
     background-color: #fff;
     color: black;
 }
 
+/* ----------------------------------------------------- */
+                    /* MAIN */
 main{
     display: grid;
     grid-template-columns: repeat(3, 350px);
@@ -54,6 +77,8 @@ main{
     align-items: center;
     padding: 20px;
     grid-gap: 20px;
+    margin-top: 80px;
+    margin-bottom: 100px;
 }
 
 .conteiner-card{
@@ -61,6 +86,18 @@ main{
     border-radius: 10%;
     height: 200px;
     width: 300px;
+}
+
+.conteiner-card:hover{
+    transform: scale(110%);
+    transition: 300ms all;
+
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.807);
+}
+
+.conteiner-card:not(hover){
+    transform: scale(100%);
+    transition: 300ms all;
 }
 
 .header-card{
@@ -94,4 +131,89 @@ main{
     border-radius: 10px;
     height: 20px;
     margin-left: 60px;
+    padding: 2px;
+}
+
+.textTarefas{
+    margin: 10px;
+    color: black;
+}
+
+.adctarefa:hover{
+    transition: 300ms ease-in-out;
+    width: 40px;
+    border-radius: 10px;
+    background-color: #00335f;
+}
+
+/* ----------------------------------------- */
+        /* DARK MODE */
+
+.hide{
+    display: none;
+}
+
+.darkPage{
+transition: 500ms all ;
+background-color: #002545;
+}
+
+#dark{
+    transition: 500ms all;
+    background-color: transparent;
+    color: #002545;
+}
+
+.tituloDark{
+    font-size: 56pt;
+    font-family: 'Edu TAS Beginner', cursive;
+    color: white;
+    font-weight: bolder;
+}
+
+.conteiner-cardDark{
+    border: 1px solid white;
+    border-radius: 10%;
+    height: 200px;
+    width: 300px;
+}
+.conteiner-cardDark:hover{
+    transform: scale(110%);
+    transition: 300ms all;
+
+    box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.807);
+}
+
+.conteiner-cardDark:not(hover){
+    transform: scale(100%);
+    transition: 300ms all;
+}
+.header-cardDark{
+    background-color: #fff;
+    display: flex;
+    justify-content: space-around;
+    color: var(--darkblue);
+    border-radius: 20px 20px 0px 0px; 
+    height: 40px;
+}
+.header-cardDark > button{
+    background: none;
+}
+
+.textTarefasDark{
+    margin: 10px;
+    color: white;
+}
+
+
+/* ------------------------------------------ */
+                /* footer */
+
+footer{
+    background-color: #002545;
+    padding: 15px;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 8pt;
+    text-align: center;
 }
