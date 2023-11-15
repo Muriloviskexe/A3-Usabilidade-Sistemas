@@ -46,6 +46,11 @@ function adcTarefa(){
 
          tarefa.value = ''; // Limpa o campo de entrada após adicionar a tarefa
      } else {
-         alert('Por favor, insira uma tarefa válida.');
+         null
      }
 }
+
+document.addEventListener('keydown', function (event) {
+    if (event.keyCode !== 13) return;
+    adcTarefa()
+})
