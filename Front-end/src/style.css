@@ -309,6 +309,7 @@ background-color: #002545;
 }
 
 .conteiner-cardDark{
+    height: min-content;
     border: 1px solid white;
     border-radius: 10%;
     height: 200px;
