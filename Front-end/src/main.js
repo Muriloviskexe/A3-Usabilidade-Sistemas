@@ -58,6 +58,30 @@ function exibirTarefas(dia) {
   });
 }
 
+function limparTodasTarefas() {
+
+  // Limpa o array
+  tarefas.segunda = [];
+  tarefas.terca = [];
+  tarefas.quarta = [];
+  tarefas.quinta = [];
+  tarefas.sexta = [];
+  tarefas.sabado = [];
+  tarefas.domingo = [];
+
+  // Atualize a exibição das tarefas após a limpeza
+  exibirTarefas('segunda');
+  exibirTarefas('terca');
+  exibirTarefas('quarta');
+  exibirTarefas('quinta');
+  exibirTarefas('sexta');
+  exibirTarefas('sabado');
+  exibirTarefas('domingo')
+
+
+  tarefaWrapper.innerHTML=('')
+}
+
 function darkMode(){
     // Esconde o botão de modo escuro e mostra o de modo claro
     document.getElementById('dark').classList.add('hide')
