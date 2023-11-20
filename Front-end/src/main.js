@@ -1,55 +1,62 @@
+// Declarando a variável tarefas no escopo global
 const tarefas = {
-    segunda: [],
-    terca: [],
-    quarta: [],
-    quinta: [],
-    sexta: [],
-    sabado: [],
-    domingo: [],
-  };
+  segunda: [],
+  terca: [],
+  quarta: [],
+  quinta: [],
+  sexta: [],
+  sabado: [],
+  domingo: [],
+};
 
 // Função para adicionar tarefa ao dia selecionado
 function adcTarefa() {
-    // Obtenha o valor do input de tarefa
-    const tarefaInput = document.getElementById('input-tarefa');
-    const tarefaTexto = tarefaInput.value.trim();
-  
-    // Verifique se o input não está vazio
-    if (tarefaTexto !== '') {
+  // Obtenha o valor do input de tarefa
+  const tarefaInput = document.getElementById('input-tarefa');
+  const tarefaTexto = tarefaInput.value.trim();
+
+  // Verifique se o input não está vazio
+  if (tarefaTexto !== '') {
       // Obtenha o valor selecionado do dropdown (dia)
       const selectDia = document.getElementById('select-dia');
-      const diaSelecionado = selectDia.value.toLowerCase(); 
-      // Certifique-se de converter para minúsculas
+      const diaSelecionado = selectDia.value.toLowerCase();
 
       // Formate a tarefa para ter a primeira letra maiúscula e o resto minúsculo
-    const tarefaFormatada = tarefaTexto.charAt(0).toUpperCase() + tarefaTexto.slice(1).toLowerCase();
-  
+      const tarefaFormatada = tarefaTexto.charAt(0).toUpperCase() + tarefaTexto.slice(1).toLowerCase();
+
       // Adicione a tarefa ao array de tarefas do dia correspondente
       tarefas[diaSelecionado].push(tarefaFormatada);
-  
+
       // Atualize a exibição das tarefas
       exibirTarefas(diaSelecionado);
-  
+
       // Limpe o input
       tarefaInput.value = '';
-    }
   }
-  
-  // Função para exibir tarefas do dia
-  function exibirTarefas(dia) {
-    const tarefasContainer = document.getElementById(dia);
-    const tarefasDia = tarefas[dia];
-  
-    // Limpe o conteúdo atual
-    tarefasContainer.innerHTML = '';
-  
-    // Adicione cada tarefa ao container
-    tarefasDia.forEach((tarefa) => {
+}
+
+// Evento de escuta para a tecla Enter no input-tarefa
+document.getElementById('input-tarefa').addEventListener('keyup', function (e) {
+  if (e.key === 'Enter') {
+      adcTarefa();
+  }
+});
+
+// Função para exibir tarefas do dia
+function exibirTarefas(dia) {
+  const tarefasContainer = document.getElementById(dia);
+  const tarefasDia = tarefas[dia];
+
+  // Limpe o conteúdo atual
+  tarefasContainer.innerHTML = '';
+
+  // Adicione cada tarefa ao container
+  tarefasDia.forEach((tarefa) => {
       const tarefaElemento = document.createElement('div');
       tarefaElemento.textContent = tarefa;
       tarefasContainer.appendChild(tarefaElemento);
-    });
-  }
+  });
+}
 
 function darkMode(){
     // Esconde o botão de modo escuro e mostra o de modo claro
@@ -68,7 +75,7 @@ function darkMode(){
     document.querySelector('html').classList.add('darkPage')
 
     //Altera estilo dos cartoes
-    document.querySelectorAll('.conteiner-card').forEach(function (card) {
+    document.querySelectorAll('.conteiner').forEach(function (card) {
         card.classList.add('conteiner-cardDark');
         card.classList.remove('conteiner-card');
     });

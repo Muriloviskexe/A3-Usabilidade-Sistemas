@@ -79,8 +79,11 @@ main{
     margin-top: 80px;
     margin-bottom: 100px;
 }
-
+.conteiner{
+    height: fit-content;
+}
 .conteiner-card{
+    min-height: max-content;
     border: 1px solid black;
     border-radius: 10%;
     min-height: 200px;
@@ -283,6 +286,12 @@ main{
   .btn-3 span:hover:after {
     width: 100%;
   }
+
+  .tester{
+    position: relative;
+    top: 30px;
+    right: 5px;
+  }
 /* ----------------------------------------- */
         /* DARK MODE */
 
@@ -309,7 +318,7 @@ background-color: #002545;
 }
 
 .conteiner-cardDark{
-    height: min-content;
+    min-height: max-content;
     border: 1px solid white;
     border-radius: 10%;
     height: 200px;

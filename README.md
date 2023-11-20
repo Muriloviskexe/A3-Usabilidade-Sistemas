@@ -16,9 +16,9 @@ Projeto criado para a A3 das materias de usabilidade web e sistemas, desenvolvim
 "/>
 <img src="https://img.shields.io/badge/NPM-v8.15.0-purple
 "/>
-<img src="https://img.shields.io/badge/frontend-Vue.js-blue
+<img src="https://img.shields.io/badge/frontend-HTML+CSS-blue
 "/>
-<img src="https://img.shields.io/badge/Backend-NODE.js-green
+<img src="https://img.shields.io/badge/Backend-JS-green
 "/>
 
 
