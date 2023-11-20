@@ -1,0 +1,362 @@
+/* ---------------------------------------------------------- */
+                        /* GERAL */
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner&family=Indie+Flower&display=swap');
+
+:root{
+    --darkblue: #002545;
+}
+
+* {
+    border: none;
+    padding: 0;
+    margin: 0;
+    transition: 300ms ease-in-out;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+
+/* --------------------------------------------------------------- */
+                        /* HEADER */
+.cabecaLight{
+    transition: 500ms all;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px;
+}
+
+
+.tituloLight{
+    font-size: 56pt;
+    font-family: 'Edu TAS Beginner', cursive;
+    color: var(--darkblue);
+    font-weight: bolder;
+}
+
+.SideBar{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    margin: 15px;
+    color: black;
+    font-size: 16pt;
+}
+
+#light{
+    transition: 400ms all;
+    color: white;
+    background-color: transparent;
+}
+
+.DarkModeButtons{
+    position: absolute;
+    top: 10px;
+    right: 40px;
+    margin: 15px;
+}
+
+.DarkModeButtons > button {
+    position: absolute;
+    font-size: 20pt;
+    background-color: #fff;
+    color: black;
+}
+
+/* ----------------------------------------------------- */
+                    /* MAIN */
+main{
+    display: grid;
+    grid-template-columns: repeat(3, 350px);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    grid-gap: 20px;
+    margin-top: 80px;
+    margin-bottom: 100px;
+}
+
+.conteiner-card{
+    border: 1px solid black;
+    border-radius: 10%;
+    min-height: 200px;
+    width: 300px;
+}
+
+.conteiner-card:hover{
+    transform: scale(110%);
+    transition: 300ms all;
+
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.807);
+}
+
+.conteiner-card:not(hover){
+    transform: scale(100%);
+    transition: 300ms all;
+}
+
+.header-card{
+    background-color: var(--darkblue);
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    border-radius: 20px 20px 0px 0px; 
+    height: 40px;
+}
+
+.header-card > h2{
+    font-size: 20pt;
+}
+
+.header-card > button{
+    background-color: #002545;
+    color: white;
+    font-size: 16pt;
+}
+
+
+.card-body{
+    font-size: 16pt;
+    font-weight: bold;
+    font-family: monospace;
+}
+
+.card-body > input{
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 20px;
+    margin-left: 60px;
+    padding: 2px;
+}
+
+.text-tarefa{
+    margin: 10px;
+    font-family: 'Edu TAS Beginner', cursive;
+}
+
+.text-light{
+    color: black;
+}
+
+.tarefas{
+    padding: 10px;
+    margin-top: 2px;
+    font-size: 13pt;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: normal;
+}
+
+.tarefasLight{
+    color: black;
+}
+
+.header-adicionarTarefa{
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+}
+.header-adicionarTarefa > h2{
+    font-family: 'Edu TAS Beginner', cursive;
+    font-size: 28pt;
+}
+
+.body-adicionarTarefas{
+    height: 50px;
+    margin-top: 10px;
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+}
+
+.select-dia{
+    position: relative;
+    overflow: hidden;
+}
+.select-dia select {
+    text-align: center;
+    width: 100%;
+    height: 90%;
+    margin: 0;
+    padding: 3px;
+    border: 2px solid black;
+    border-radius: 30px;
+    outline: none;
+    background: transparent;
+    appearance: none;
+  }
+.body-adicionarTarefas > input{
+    border-radius: 20px;
+    border: 2px solid black;
+    height: 30px;
+    padding: 5px;
+}
+
+.custom-btn {
+    width: 60px;
+    height: 40px;
+    color: #eee;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 300ms ease;
+    position: relative;
+    display: inline-block;
+     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+     7px 7px 20px 0px rgba(0,0,0,.1),
+     4px 4px 5px 0px rgba(0,0,0,.1);
+    outline: none;
+  }
+  
+  .btn-3 {
+    background:var(--darkblue);
+  background: var(--darkblue);
+    width: 70px;
+    height: 40px;
+    line-height: 42px;
+    padding: 0;
+    border: none;
+    
+  }
+  .btn-3 span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .btn-3:before,
+  .btn-3:after {
+    position: absolute;
+    content: "";
+    right: 0;
+    top: 0;
+     background: var(--darkblue);
+    transition: all 0.3s ease;
+  }
+  .btn-3:before {
+    height: 0%;
+    width: 2px;
+  }
+  .btn-3:after {
+    width: 0%;
+    height: 2px;
+  }
+  .btn-3:hover{
+     background: transparent;
+    box-shadow: none;
+  }
+  .btn-3:hover:before {
+    height: 100%;
+  }
+  .btn-3:hover:after {
+    width: 100%;
+  }
+  .btn-3 span:hover{
+     color: var(--darkblue);
+  }
+  .btn-3 span:before,
+  .btn-3 span:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+     background: var(--darkblue);
+    transition: all 0.3s ease;
+  }
+  .btn-3 span:before {
+    width: 2px;
+    height: 0%;
+  }
+  .btn-3 span:after {
+    width: 0%;
+    height: 2px;
+  }
+  .btn-3 span:hover:before {
+    height: 100%;
+  }
+  .btn-3 span:hover:after {
+    width: 100%;
+  }
+/* ----------------------------------------- */
+        /* DARK MODE */
+
+.hide{
+    display: none;
+}
+
+.darkPage{
+transition: 500ms all ;
+background-color: #002545;
+}
+
+#dark{
+    transition: 500ms all;
+    background-color: transparent;
+    color: #002545;
+}
+
+.tituloDark{
+    font-size: 56pt;
+    font-family: 'Edu TAS Beginner', cursive;
+    color: white;
+    font-weight: bolder;
+}
+
+.conteiner-cardDark{
+    height: min-content;
+    border: 1px solid white;
+    border-radius: 10%;
+    height: 200px;
+    width: 300px;
+}
+.conteiner-cardDark:hover{
+    transform: scale(110%);
+    transition: 300ms all;
+
+    box-shadow: 2px 2px 4px rgba(255, 255, 255, 0.807);
+}
+
+.conteiner-cardDark:not(hover){
+    transform: scale(100%);
+    transition: 300ms all;
+}
+.header-cardDark{
+    background-color: #fff;
+    display: flex;
+    justify-content: space-around;
+    color: var(--darkblue);
+    border-radius: 20px 20px 0px 0px; 
+    height: 40px;
+    font-size: 14pt;
+}
+.header-cardDark > button{
+    background: none;
+    font-size: 16pt;
+}
+
+.text-dark{
+    color: white;
+}
+
+.tarefasDark{
+    color: white;
+}
+
+
+/* ------------------------------------------ */
+                /* footer */
+
+footer{
+    background-color: #002545;
+    padding: 15px;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 8pt;
+    text-align: center;
+}
