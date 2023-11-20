@@ -102,50 +102,49 @@ document.getElementById('select-dia').style.backgroundColor = 'white';
 
 
 function lightMode() {
-    // Esconde o botão de modo claro e mostra o de modo escuro
-    document.getElementById('dark').classList.remove('hide');
-    document.getElementById('light').classList.add('hide');
+  // Esconde o botão de modo claro e mostra o de modo escuro
+  document.getElementById('dark').classList.remove('hide');
+  document.getElementById('light').classList.add('hide');
 
-    // Altera o estilo do título
-    document.querySelector('#titulo').classList.remove('tituloDark');
-    document.querySelector('#titulo').classList.add('tituloLight');
+  // Altera o estilo do título
+  document.querySelector('#titulo').classList.remove('tituloDark');
+  document.querySelector('#titulo').classList.add('tituloLight');
 
-    // Altera o estilo do cabeçalho
-    document.querySelector('#cabeca').classList.remove('cabecaDark');
+  // Altera o estilo do cabeçalho
+  document.querySelector('#cabeca').classList.remove('cabecaDark');
 
-    // Remove o estilo de modo escuro do HTML
-    document.querySelector('html').classList.remove('darkPage');
+  // Remove o estilo de modo escuro do HTML
+  document.querySelector('html').classList.remove('darkPage');
 
-    // Altera o estilo dos cartões
-    document.querySelectorAll('.conteiner-cardDark').forEach(function (card) {
-        card.classList.remove('conteiner-cardDark');
-        card.classList.add('conteiner-card');
-    });
+  // Altera o estilo dos cartões
+  document.querySelectorAll('.conteiner-cardDark').forEach(function (card) {
+    card.classList.remove('conteiner-cardDark');
+    card.classList.add('conteiner-card');
+  });
 
-    // Altera o estilo dos cabeçalhos dos cartões
-    document.querySelectorAll('.header-cardDark').forEach(function (header) {
-        header.classList.remove('header-cardDark');
-        header.classList.add('header-card');
-    });
+  // Altera o estilo dos cabeçalhos dos cartões
+  document.querySelectorAll('.header-cardDark').forEach(function (header) {
+    header.classList.remove('header-cardDark');
+    header.classList.add('header-card');
+  });
 
-    // Altera o estilo do texto da tarefa
-    document.querySelectorAll('.text-tarefa').forEach(function (textTarefa) {
-        textTarefa.classList.add('text-light');
-        textTarefa.classList.remove('text-dark');
-    });
+  // Altera o estilo do texto da tarefa
+  document.querySelectorAll('.text-tarefa').forEach(function (textTarefa) {
+    textTarefa.classList.add('text-light');
+    textTarefa.classList.remove('text-dark');
+  });
 
-    //Altera as tarefas
-    document.querySelectorAll('.tarefas').forEach(function (tarefas){
-        tarefas.classList.remove('tarefasLight')
-        tarefas.classList.remove('tarefasDark')
-
+  //Altera as tarefas
+  document.querySelectorAll('.tarefas').forEach(function (tarefas){
+    tarefas.classList.remove('tarefasLight')
+    tarefas.classList.remove('tarefasDark')
 })
+
 // Altera a cor do texto da header-adicionarTarefa para preto (ou a cor desejada para o modo claro)
 document.querySelector('.header-adicionarTarefa').style.color = 'black';
 
 // Altera a cor do texto da body-adicionarTarefas para preto (ou a cor desejada para o modo claro)
 document.querySelector('.body-adicionarTarefas').style.color = 'black';
 document.getElementById('select-dia').style.color = 'black';
-
 
 }
