@@ -149,5 +149,3 @@ document.getElementById('select-dia').style.color = 'black';
 
 
 }
-
-
