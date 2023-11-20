@@ -25,24 +25,45 @@
         <div class="SideBar">
           <button><i class="fa-solid fa-bars"></i></button> 
         </div>
-      </div>
+      </div>aaaaaa
   </header>
 
 
+  <div class="header-adicionarTarefa">
+    <h2>
+      Adicionar Tarefa
+    </h2>
+  </div>
+
+  <div class="body-adicionarTarefas">
+    
+    <div class="select-dia">
+      <select id="select-dia">
+        <option value="segunda">Segunda-Feira</option>
+        <option value="terca">Terça-Feira</option>
+        <option value="quarta">Quarta-Feira</option>
+        <option value="quinta">Quinta-Feira</option>
+        <option value="sexta">Sexta-Feira</option>
+        <option value="sabado">Sábado</option>
+        <option value="domingo">Domingo</option>
+      </select>
+    </div>
+  
+    <input type="text" placeholder="Digite sua tarefa aqui" name="input-tarefa" id="input-tarefa"/>
+
+    <button class="custom-btn btn-3" onclick="adcTarefa()"><span><i class="fa-solid fa-plus"></i></span></button>
+  </div>
   <main>
 
-      <!-- Card segunda -->
+      <!-- Card segunda! -->
     <div class="conteiner conteiner-card">
       <div class="header header-card">
         <h2>
           Segunda-Feira
         </h2>
-        <button class="adctarefa" onclick="adcTarefa(segunda)" id="adicionar-segunda">
-          <i class="fa-solid fa-plus"></i>
-        </button>
+        
       </div>
       <div class="card-body">
-        <input type="text" placeholder="Digite sua tarefa aqui" name="input-segunda" id="input-segunda"/>
         <p class="text-tarefa text-light">Tarefas:</p>
         <div class="tarefas" id="segunda"></div>
     </div>
@@ -54,12 +75,8 @@
         <h2>
           Terça-Feira
         </h2>
-        <button class="adctarefa" onclick="adcTarefa(terca)" id="adicionar-terca">
-          <i class="fa-solid fa-plus"></i>
-        </button>
       </div>
       <div class="card-body">
-        <input type="text" placeholder="Digite sua tarefa aqui" name="input-terca" id="input-terca"/>
         <p class="text-tarefa text-light">Tarefas:</p>
         <div class="tarefas" id="terca"></div>
     </div>
@@ -71,12 +88,8 @@
         <h2>
           Quarta-Feira
         </h2>
-        <button class="adctarefa" onclick="adcTarefa(quarta)" id="adicionar-quarta">
-          <i class="fa-solid fa-plus"></i>
-        </button>
       </div>
       <div class="card-body">
-        <input type="text" placeholder="Digite sua tarefa aqui" name="input-quarta" id="input-quarta"/>
         <p class="text-tarefa text-light">Tarefas:</p>
         <div class="tarefas" id="quarta"></div>
     </div>
@@ -88,12 +101,8 @@
         <h2>
           Quinta-Feira
         </h2>
-        <button class="adctarefa" onclick="adcTarefa(quinta)" id="adicionar-quinta">
-          <i class="fa-solid fa-plus"></i>
-        </button>
       </div>
       <div class="card-body">
-        <input type="text" placeholder="Digite sua tarefa aqui" name="input-quinta" id="input-quinta"/>
         <p class="text-tarefa text-light">Tarefas:</p>
         <div class="tarefas" id="quinta"></div>
     </div>
@@ -105,12 +114,8 @@
         <h2>
           Sexta-Feira
         </h2>
-        <button class="adctarefa" onclick="adcTarefa(sexta)" id="adicionar-sexta">
-          <i class="fa-solid fa-plus"></i>
-        </button>
       </div>
       <div class="card-body">
-        <input type="text" placeholder="Digite sua tarefa aqui" name="input-sexta" id="input-sexta"/>
         <p class="text-tarefa text-light">Tarefas:</p>
         <div class="tarefas" id="sexta"></div>
     </div>
@@ -122,14 +127,10 @@
         <h2>
           Sábado
         </h2>
-        <button class="adctarefa" onclick="adcTarefa(Sabado)" id="adicionar-Sabado">
-          <i class="fa-solid fa-plus"></i>
-        </button>
       </div>
       <div class="card-body">
-        <input type="text" placeholder="Digite sua tarefa aqui" name="input-Sabado" id="input-Sabado"/>
         <p class="text-tarefa text-light">Tarefas:</p>
-        <div class="tarefas" id="Sabado"></div>
+        <div class="tarefas" id="sabado"></div>
     </div>
     </div>
 
@@ -139,16 +140,13 @@
         <h2>
           domingo
         </h2>
-        <button class="adctarefa" onclick="adcTarefa(Domingo)" id="adicionar-Domingo">
-          <i class="fa-solid fa-plus"></i>
-        </button>
       </div>
       <div class="card-body">
-        <input type="text" placeholder="Digite sua tarefa aqui" name="input-Domingo" id="input-Domingo"/>
         <p class="text-tarefa text-light">Tarefas:</p>
-        <div class="tarefas" id="Domingo"></div>
+        <div class="tarefas" id="domingo"></div>
     </div>
     </div>
+
   </main>
 
   <footer>

@@ -1,3 +1,55 @@
+const tarefas = {
+    segunda: [],
+    terca: [],
+    quarta: [],
+    quinta: [],
+    sexta: [],
+    sabado: [],
+    domingo: [],
+  };
+
+// Função para adicionar tarefa ao dia selecionado
+function adcTarefa() {
+    // Obtenha o valor do input de tarefa
+    const tarefaInput = document.getElementById('input-tarefa');
+    const tarefaTexto = tarefaInput.value.trim();
+  
+    // Verifique se o input não está vazio
+    if (tarefaTexto !== '') {
+      // Obtenha o valor selecionado do dropdown (dia)
+      const selectDia = document.getElementById('select-dia');
+      const diaSelecionado = selectDia.value.toLowerCase(); 
+      // Certifique-se de converter para minúsculas
+
+      // Formate a tarefa para ter a primeira letra maiúscula e o resto minúsculo
+    const tarefaFormatada = tarefaTexto.charAt(0).toUpperCase() + tarefaTexto.slice(1).toLowerCase();
+  
+      // Adicione a tarefa ao array de tarefas do dia correspondente
+      tarefas[diaSelecionado].push(tarefaFormatada);
+  
+      // Atualize a exibição das tarefas
+      exibirTarefas(diaSelecionado);
+  
+      // Limpe o input
+      tarefaInput.value = '';
+    }
+  }
+  
+  // Função para exibir tarefas do dia
+  function exibirTarefas(dia) {
+    const tarefasContainer = document.getElementById(dia);
+    const tarefasDia = tarefas[dia];
+  
+    // Limpe o conteúdo atual
+    tarefasContainer.innerHTML = '';
+  
+    // Adicione cada tarefa ao container
+    tarefasDia.forEach((tarefa) => {
+      const tarefaElemento = document.createElement('div');
+      tarefaElemento.textContent = tarefa;
+      tarefasContainer.appendChild(tarefaElemento);
+    });
+  }
 
 function darkMode(){
     // Esconde o botão de modo escuro e mostra o de modo claro
@@ -39,7 +91,15 @@ function darkMode(){
         tarefas.classList.remove('tarefasLight')
 
 })
+// Altera a cor do texto da header-adicionarTarefa para branco
+document.querySelector('.header-adicionarTarefa').style.color = 'white';
+
+// Altera a cor do texto da body-adicionarTarefas para branco
+document.querySelector('.body-adicionarTarefas').style.color = 'white';
+document.getElementById('select-dia').style.backgroundColor = 'white';
+
 }
+
 
 function lightMode() {
     // Esconde o botão de modo claro e mostra o de modo escuro
@@ -80,72 +140,14 @@ function lightMode() {
         tarefas.classList.remove('tarefasDark')
 
 })
+// Altera a cor do texto da header-adicionarTarefa para preto (ou a cor desejada para o modo claro)
+document.querySelector('.header-adicionarTarefa').style.color = 'black';
+
+// Altera a cor do texto da body-adicionarTarefas para preto (ou a cor desejada para o modo claro)
+document.querySelector('.body-adicionarTarefas').style.color = 'black';
+document.getElementById('select-dia').style.color = 'black';
+
+
 }
 
 
-function adcTarefa(diaDaSemana) {
-    var tarefaInput = document.querySelector(`#input-${diaDaSemana}`);
-    var listaTarefas = document.getElementById(diaDaSemana);
-
-    const value = capitalizeFirstLetter(tarefaInput.value.trim());
-
-
-    if (value !== '') {
-        const novaTarefa = document.createElement('li');
-        novaTarefa.textContent = value;
-        listaTarefas.appendChild(novaTarefa);
-
-        tarefaInput.value = ''; // Limpa o campo de entrada após adicionar a tarefa
-    } else {
-        null
-    }
-}
-
-function adicionarTarefaBotao(diaDaSemana) {
-    adcTarefa(diaDaSemana);
-}
-
-document.addEventListener('keydown', function (event) {
-    if (event.keyCode !== 13) return;
-    adcTarefa('segunda'); // Substitua 'segunda' pelo dia da semana desejado
-    adcTarefa('terca');
-    adcTarefa('quarta');
-    adcTarefa('quinta');
-    adcTarefa('sexta');
-    adcTarefa('Sabado');
-    adcTarefa('Domingo');
-});
-
-
-document.querySelector('#adicionar-segunda').addEventListener('click', function () {
-    adicionarTarefaBotao('segunda');
-});
-
-// Repita o processo para os outros dias da semana
-document.querySelector('#adicionar-terca').addEventListener('click', function () {
-    adicionarTarefaBotao('terca');
-});
-
-document.querySelector('#adicionar-quarta').addEventListener('click', function () {
-    adicionarTarefaBotao('quarta');
-});
-
-document.querySelector('#adicionar-quinta').addEventListener('click', function () {
-    adicionarTarefaBotao('quinta');
-});
-
-document.querySelector('#adicionar-sexta').addEventListener('click', function () {
-    adicionarTarefaBotao('sexta');
-});
-
-document.querySelector('#adicionar-Sabado').addEventListener('click', function () {
-    adicionarTarefaBotao('Sabado');
-});
-
-document.querySelector('#adicionar-Domingo').addEventListener('click', function () {
-    adicionarTarefaBotao('Domingo');
-});
-
-function capitalizeFirstLetter(str) {
-    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
-}
