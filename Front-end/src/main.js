@@ -1,3 +1,7 @@
+const axios = require("axios");
+
+
+
 // Declarando a variável tarefas no escopo global
 const tarefas = {
   segunda: [],
@@ -11,27 +15,37 @@ const tarefas = {
 
 // Função para adicionar tarefa ao dia selecionado
 function adcTarefa() {
-  // Obtenha o valor do input de tarefa
-  const tarefaInput = document.getElementById('input-tarefa');
-  const tarefaTexto = tarefaInput.value.trim();
+// Obtenha o valor do input de tarefa
+const tarefaInput = document.getElementById('input-tarefa');
+const tarefaTexto = tarefaInput.value.trim();
 
-  // Verifique se o input não está vazio
-  if (tarefaTexto !== '') {
-      // Obtenha o valor selecionado do dropdown (dia)
-      const selectDia = document.getElementById('select-dia');
-      const diaSelecionado = selectDia.value.toLowerCase();
+// Verifique se o input não está vazio
+if (tarefaTexto !== '') {
+    // Obtenha o valor selecionado do dropdown (dia)
+    const selectDia = document.getElementById('select-dia');
+    const diaSelecionado = selectDia.value.toLowerCase();
 
-      // Formate a tarefa para ter a primeira letra maiúscula e o resto minúsculo
-      const tarefaFormatada = tarefaTexto.charAt(0).toUpperCase() + tarefaTexto.slice(1).toLowerCase();
+    // Formate a tarefa para ter a primeira letra maiúscula e o resto minúsculo
+    const tarefaFormatada = tarefaTexto.charAt(0).toUpperCase() + tarefaTexto.slice(1).toLowerCase();
 
-      // Adicione a tarefa ao array de tarefas do dia correspondente
-      tarefas[diaSelecionado].push(tarefaFormatada);
+    // Adicione a tarefa ao array de tarefas do dia correspondente
+    tarefas[diaSelecionado].push(tarefaFormatada);
 
-      // Atualize a exibição das tarefas
-      exibirTarefas(diaSelecionado);
+    // Atualize a exibição das tarefas
+    exibirTarefas(diaSelecionado);
 
-      // Limpe o input
-      tarefaInput.value = '';
+    // Limpe o input
+    tarefaInput.value = '';
+
+    const lembretes = {
+      name: tarefaFormatada,
+      data: diaSelecionado,
+      categoria: 'tarefa',
+    };
+
+    axios.post('http://localhost:4000/tasks', lembretes);
+
+
   }
 }
 
