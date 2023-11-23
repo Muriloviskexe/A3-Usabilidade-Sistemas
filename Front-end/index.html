@@ -12,8 +12,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Planner Online</title>
+  <script>
+    function carregar(){
+      axios.get('http://localhost:4000/tasks')
+        .then((r)=> console.log (r + 'ok'))
+        .catch((e)=> console.log (e));
+    }
+  </script>
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script type="module" src="src/main.js" defer></script>
 </head>
-<body onload="Carregar()">
+<body onload="carregar()">
 
 <header>
 <div class="cabecaLight" id="cabeca">
@@ -189,7 +199,6 @@
     <p>Desenvolvido para o Projeto de conclusão de semestre da faculdade USJT</p>
   </footer>
 
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script type="module" src="src/main.js" defer></script>
+
 </body>
 </html>

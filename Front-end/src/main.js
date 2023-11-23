@@ -33,7 +33,9 @@ if (tarefaTexto !== '') {
       categoria: 'tarefa',
     };
 
-    axios.post('http://localhost:4000/tasks', lembretes).then(()=> console.log = 'OK')
+    axios.post('http://localhost:4000/tasks', lembretes)
+    .then(()=> console.log = 'OK')
+    .catch((e)=> console.log (e));
 
     // Atualize a exibição das tarefas
     exibirTarefas(diaSelecionado);
@@ -69,9 +71,7 @@ function exibirTarefas(dia) {
   });
 }
 
-function Carregar(){
-  axios.get('http://localhost:4000/tasks', lembretes).then(()=> console.log = 'OK')
-}
+
 
 function limparTodasTarefas() {
 
