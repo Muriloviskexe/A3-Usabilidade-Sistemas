@@ -6,21 +6,18 @@ Projeto criado para a A3 das materias de usabilidade web e sistemas, desenvolvim
 <ul> 
 <li>Adicionar tarefas</li>
 <li>Remover tarefas</li>
-<li>Logar com conta</li>
-<li>Adicionar horario</li>
+<li>Logar com conta *</li>
+<li>Adicionar Observações</li>
+<li>Limpar tarefas</li>
 </ul>
 
 
-
-<img src="https://img.shields.io/badge/NODE-v16.17.0-red
-"/>
-<img src="https://img.shields.io/badge/NPM-v8.15.0-purple
-"/>
-<img src="https://img.shields.io/badge/frontend-HTML+CSS-blue
-"/>
-<img src="https://img.shields.io/badge/Backend-JS-green
-"/>
-
+<div style.gap='5px'> 
+<img src="https://img.shields.io/badge/NODE-v16.17.0-red"/>
+<img src="https://img.shields.io/badge/NPM-v8.15.0-purple"/>
+<img src="https://img.shields.io/badge/frontend-HTML+CSS-blue"/>
+<img src="https://img.shields.io/badge/Backend-JS-green"/>
+</div>
 
 ## Visualizando o Projeto na sua maquina:
 
@@ -34,7 +31,14 @@ Entrar na pasta criada
 
 e para rodar 
 
-```npm run dev```
+```abrir com LIVE SERVER```
+
+
+## Online
+
+O site foi hospedado Online pelo github para maior facilidade de acesso, porém o backend está na maquina, por isso as informações adicionadas no site só estarão disponiveis e salvas enquanto na mesma mesma estiver rodando o servidor
+
+link: ....
 
 
 
