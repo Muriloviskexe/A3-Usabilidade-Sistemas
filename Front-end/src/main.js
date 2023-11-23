@@ -1,9 +1,5 @@
-const axios = require("axios");
-
-
-
 // Declarando a variável tarefas no escopo global
-const tarefas = {
+var tarefas = {
   segunda: [],
   terca: [],
   quarta: [],
@@ -31,19 +27,20 @@ if (tarefaTexto !== '') {
     // Adicione a tarefa ao array de tarefas do dia correspondente
     tarefas[diaSelecionado].push(tarefaFormatada);
 
-    // Atualize a exibição das tarefas
-    exibirTarefas(diaSelecionado);
-
-    // Limpe o input
-    tarefaInput.value = '';
-
     const lembretes = {
       name: tarefaFormatada,
       data: diaSelecionado,
       categoria: 'tarefa',
     };
 
-    axios.post('http://localhost:4000/tasks', lembretes);
+    axios.post('http://localhost:4000/tasks', lembretes).then(()=> console.log = 'OK')
+
+    // Atualize a exibição das tarefas
+    exibirTarefas(diaSelecionado);
+
+    // Limpe o input
+    tarefaInput.value = '';
+
 
 
   }
@@ -70,6 +67,10 @@ function exibirTarefas(dia) {
       tarefaElemento.textContent = tarefa;
       tarefasContainer.appendChild(tarefaElemento);
   });
+}
+
+function Carregar(){
+  axios.get('http://localhost:4000/tasks', lembretes).then(()=> console.log = 'OK')
 }
 
 function limparTodasTarefas() {
