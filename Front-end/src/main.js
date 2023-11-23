@@ -97,6 +97,8 @@ function limparTodasTarefas() {
   tarefaWrapper.innerHTML=('')
 }
 
+
+/*
 function darkMode(){
     // Esconde o botão de modo escuro e mostra o de modo claro
     document.getElementById('dark').classList.add('hide')
@@ -193,4 +195,4 @@ document.querySelector('.header-adicionarTarefa').style.color = 'black';
 document.querySelector('.body-adicionarTarefas').style.color = 'black';
 document.getElementById('select-dia').style.color = 'black';
 
-}
+} */
