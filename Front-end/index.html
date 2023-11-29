@@ -12,18 +12,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Planner Online</title>
-  <script>
-    function carregar(){
-      axios.get('http://localhost:4000/tasks')
-        .then((r)=> console.log (r + 'ok'))
-        .catch((e)=> console.log (e));
-    }
-  </script>
 
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script type="module" src="src/main.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+  <script>
+  function obterLembretes() {
+      axios.get('http://localhost:4000/lembretes')
+          .then(r => {
+              console.log(r);
+              document.getElementById('lemb').value = r.data["1"].texto;
+          })
+          .catch(e => console.log(e));
+  }
+  </script>
+  <script src="src/main.js"></script>
+
 </head>
-<body onload="carregar()">
+<body onload="obterLembretes()">
 
 <header>
 <div class="cabecaLight" id="cabeca">

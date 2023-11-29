@@ -27,15 +27,9 @@ if (tarefaTexto !== '') {
     // Adicione a tarefa ao array de tarefas do dia correspondente
     tarefas[diaSelecionado].push(tarefaFormatada);
 
-    const lembretes = {
-      name: tarefaFormatada,
-      data: diaSelecionado,
-      categoria: 'tarefa',
-    };
-
-    axios.post('http://localhost:4000/tasks', lembretes)
-    .then(()=> console.log = 'OK')
-    .catch((e)=> console.log (e));
+    axios.post('http://localhost:4000/lembretes', { "texto": tarefaFormatada })
+      .then(r => console.log("ok"))
+      .catch(e => console.log(e));
 
     // Atualize a exibição das tarefas
     exibirTarefas(diaSelecionado);
