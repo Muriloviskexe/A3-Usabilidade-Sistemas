@@ -27,9 +27,13 @@ if (tarefaTexto !== '') {
     // Adicione a tarefa ao array de tarefas do dia correspondente
     tarefas[diaSelecionado].push(tarefaFormatada);
 
-    axios.post('http://localhost:4000/lembretes', { "texto": tarefaFormatada })
+    axios.post('http://localhost:4000', { "texto": tarefaFormatada , "data": diaSelecionado, "categoria": "tarefa" })
       .then(r => console.log("ok"))
       .catch(e => console.log(e));
+
+    // var obs = getElementById('insertObs').value 
+    // var obsFormatada = obs.charAt(0).toUpperCase() + tarefaTexto.slice(1).toLowerCase();
+    // axios.post('http://localhost:5000', { "texto": obsFormatada, "id": })
 
     // Atualize a exibição das tarefas
     exibirTarefas(diaSelecionado);
@@ -43,11 +47,11 @@ if (tarefaTexto !== '') {
 }
 
 // Evento de escuta para a tecla Enter no input-tarefa
-document.getElementById('input-tarefa').addEventListener('keyup', function (e) {
-  if (e.key === 'Enter') {
-      adcTarefa();
-  }
-});
+// document.getElementById('input-tarefa').addEventListener('keyup', function (e) {
+//   if (e.key === 'Enter') {
+//       adcTarefa();
+//   }
+// });
 
 // Função para exibir tarefas do dia
 function exibirTarefas(dia) {
