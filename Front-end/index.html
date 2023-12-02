@@ -1,112 +1,106 @@
 <!DOCTYPE html>
 <html lang="pt-BR" id="html">
+
 <head>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-
-  <link rel="stylesheet" href="./src/style.css">
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
   <title>Planner Online</title>
 
+  <!-- External Stylesheets -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./src/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+  <!-- External Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    
-  <script>
- function obterLembretes() {
-  axios.get('http://localhost:4000')
-    .then(response => {
-      console.log(response);
-
-      if (response.data && response.data.length > 0) {
-        document.getElementById('lemb').value = response.data[0].texto;
-      } else {
-        document.getElementById('lemb').value = 'Sem lembretes disponíveis';
-      }
-    })
-    .catch(error => {
-      console.log(error);   
-    });
-}
-  /* function obterObs() {
-      axios.get('http://localhost:5000')
-          .then(r => {
-              console.log(r);
-              document.getElementById('obs').value = r.data["1"].texto;
-          })
-          .catch(e => console.log(e)); 
-      }
-  */
- 
-  </script>
   <script src="src/main.js"></script>
 
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+  <script>
+    function obterLembretes() {
+     axios.get('http://localhost:4000')
+       .then(response => {
+         console.log(response);
+   
+         if (response.data && response.data.length > 0) {
+           document.getElementById('lemb').value = response.data[0].texto;
+         } else {
+           document.getElementById('lemb').value = 'Sem lembretes disponíveis';
+         }
+       })
+       .catch(error => {
+         console.log(error);   
+       });
+   }
+     /* function obterObs() {
+         axios.get('http://localhost:5000')
+             .then(r => {
+                 console.log(r);
+                 document.getElementById('obs').value = r.data["1"].texto;
+             })
+             .catch(e => console.log(e)); 
+         }
+     */
+    
+     </script>
+
 </head>
+
 <body onload="obterLembretes()">
 
-<header>
-<div class="cabecaLight" id="cabeca">
-  <h1 class="tituloLight" id="titulo">Planner Online</h1>
-  <!-- <div class="DarkModeButtons">
-    <button class='' onclick="darkMode()" id="dark"><i class="fa-regular fa-moon"></i></button>
-    <button class='hide' onclick="lightMode()" id="light" ><i class="fa-regular fa-sun"></i></button>
-    <p class="tester">tester</p>
-  </div> -->
-  
+  <header>
+    <div class="cabecaLight" id="cabeca">
+      <h1 class="tituloLight" id="titulo">Planner Online</h1>
 
-  <!-- Side Bar -->
-<div>
-  <input type="checkbox" id="check">
-  <label for="check">
-    <i class="fas fa-bars" id="btn"></i>
-    <i class="fas fa-times" id="cancel"></i>
-  </label>
-  <div class="sidebar">
-    <header>Menu</header>
-    <a href="#" >
-      <i class="fas fa-user"></i>
-      <span>Usuário </span>
-    </a>
-    <a href="#">
-      <i class="fas fa-history"></i>
-      <span>Histórico</span>
-    </a>
-    <a href="#">
-      <i class="fas fa-book"></i>
-      <span>Tutorial</span>
-    </a>
-    <a onclick="limparTodasTarefas()">
-      <i class="fas fa-trash"></i>
-      <span >Limpar tudo</span>
-    </a>
-    <a href="https://github.com/Muriloviskexe/A3-Usabilidade-Sistemas/blob/master/README.md" rel="next" target="_blank">
-      <i class="far fa-question-circle"></i>
-      <span>Sobre</span>
-    </a>
-    <a href="#">
-      <i class="fa fa-user-times"></i>
-      <span>Sair</span>
-    </a>
-  </div>
-  </div>
-</div>
-</div>
-</header>
+      <div>
+        <input type="checkbox" id="check">
+        <label for="check">
+          <i class="fas fa-bars" id="btn"></i>
+          <i class="fas fa-times" id="cancel"></i>
+        </label>
 
+        <div class="sidebar">
+          <header>Menu</header>
+          <a href="#" class="bgcolor">
+            <i class="fas fa-user"></i>
+            <span>Usuário </span>
+          </a>
+          <a href="#" class="bgcolor">
+            <i class="fas fa-history"></i>
+            <span>Histórico</span>
+          </a>
+          <a href="#" class="bgcolor">
+            <i class="fas fa-book"></i>
+            <span>Tutorial</span>
+          </a>
+          <a onclick="limparTodasTarefas()" class="bgcolor">
+            <i class="fas fa-trash"></i>
+            <span >Limpar tudo</span>
+          </a>
+          <a href="https://github.com/Muriloviskexe/A3-Usabilidade-Sistemas/blob/master/README.md" rel="next"
+            target="_blank" class="bgcolor">
+            <i class="far fa-question-circle"></i>
+            <span>Sobre</span>
+          </a>
+          <a href="#" class="bgcolor">
+            <i class="fa fa-user-times"></i>
+            <span>Sair</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
 
   <div class="header-adicionarTarefa">
-    <h2>
-      Adicionar Tarefa
-    </h2>
+    <h2>Adicionar Tarefa</h2>
   </div>
 
   <div class="body-adicionarTarefas">
-    
     <div class="select-dia">
       <select id="select-dia">
         <option value="segunda">Segunda-Feira</option>
@@ -118,20 +112,18 @@
         <option value="domingo">Domingo</option>
       </select>
     </div>
-  
-    <input type="text" placeholder="Digite sua tarefa aqui" name="input-tarefa" id="input-tarefa"/>
 
+    <input type="text" placeholder="Digite sua tarefa aqui" name="input-tarefa" id="input-tarefa" />
     <button class="custom-btn btn-3" onclick="adcTarefa()"><span><i class="fa-solid fa-plus"></i></span></button>
   </div>
-<!--
-    <div class="obs">
-      <input type="text" placeholder="Digite uma observação" name="insertObs" id="insertObs">
-    </div> 
--->
-  <main>
+  <div class="adcObs">
+    <input type="text" placeholder="insira um Observação" id="OBS">
+  </div>
 
+  <main>
+    <!-- Cards para cada dia da semana -->
       <!-- Card segunda! -->
-    <div class="conteiner conteiner-card">
+      <div class="conteiner conteiner-card">
       <div class="header header-card">
         <h2>
           Segunda-Feira
@@ -141,7 +133,8 @@
       <div class="card-body">
         <p class="text-tarefa">Tarefas:</p>
         <div class="tarefas" id="segunda"></div>
-    </div>
+        <div class="obs"></div>
+      </div>
     </div>
 
       <!-- Card Terça -->
@@ -222,12 +215,12 @@
     </div>
     </div>
 
+
   </main>
 
   <footer>
     <p>Desenvolvido para o Projeto de conclusão de semestre da faculdade USJT</p>
   </footer>
-
-
 </body>
+
 </html>
