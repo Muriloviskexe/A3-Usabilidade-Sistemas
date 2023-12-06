@@ -57,10 +57,7 @@
 
     7°: Abra a extensão ThunderClient e crie uma request POST com a URL "http://localhost:4000/obs" > Vá em Body e em JSON utilize o modelo abaixo para criar algumas tarefas (o campo id_evento deve ser preenchido com o ID da tarefa que deseja alocar está observação)
 
-        {
-            "id_evento": 1,
-            "texto": "Queijo"
-        }
+    
 
     Posteriormente crie uma outra request com a mesma URL, mas como GET, e rode para obter a lista de observações
 
