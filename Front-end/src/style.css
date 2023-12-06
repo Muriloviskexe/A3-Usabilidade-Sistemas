@@ -158,6 +158,10 @@ main {
   appearance: none;
 }
 
+.escurinho{
+  background-color: #353535a0;
+}
+
 .body-adicionarTarefas > input {
   border-radius: 20px;
   border: 2px solid black;
@@ -276,8 +280,42 @@ main {
   align-items: center;
 }
 
+.tarefasImpressas{
+  display: flex;
+  justify-content: space-around;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 5px solid black;
+  border-radius: 30px;
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+  z-index: 99;
+  width: 300px;
+  height: 200px;
+  min-height: max-content;
+}
+
+.addOBS{
+  margin-top: 20px;  
+}
+
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
 #OBS{
-  width: 400px;
+  width: 250px;
   height: 40px;
   border-radius: 10px;
   text-align: center;

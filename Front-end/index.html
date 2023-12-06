@@ -22,38 +22,43 @@
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
   <script>
-    function obterLembretes() {
-     axios.get('http://localhost:4000')
-       .then(response => {
-         console.log(response);
-   
-         if (response.data && response.data.length > 0) {
-           document.getElementById('lemb').value = response.data[0].texto;
-         } else {
-           document.getElementById('lemb').value = 'Sem lembretes disponíveis';
-         }
-       })
-       .catch(error => {
-         console.log(error);   
-       });
-   }
-     /* function obterObs() {
-         axios.get('http://localhost:5000')
-             .then(r => {
-                 console.log(r);
-                 document.getElementById('obs').value = r.data["1"].texto;
-             })
-             .catch(e => console.log(e)); 
-         }
-     */
+  
+  function obterLembretes() {
+  axios.get('http://localhost:4000/tasks')
+    .then(response => {
+      console.log(response);
+
+      const lembretes = response.data;
+
+      // Verificar se lembretes é um array antes de prosseguir
+      if (Array.isArray(lembretes) && lembretes.length > 0) {
+        // Exibir o nome da primeira tarefa em um elemento HTML
+        const nomeTarefaElement = document.getElementById('nomeTarefa');
+
+        // Verificar se o elemento HTML existe antes de atualizar seu conteúdo
+        if (nomeTarefaElement) {
+          nomeTarefaElement.textContent = lembretes[0].nome;
+        } else {
+          console.log('Elemento HTML não encontrado');
+        }
+      } else {
+        // Caso não haja lembretes ou não seja um array
+        console.log('Sem lembretes disponíveis ou o formato não é um array');
+      }
+    })
+    .catch(error => {
+      console.log(error);
+    });
+}
     
      </script>
 
 </head>
 
-<body onload="obterLembretes()">
+<body onload="obterLembretes()" id="body">
 
   <header>
+    
     <div class="cabecaLight" id="cabeca">
       <h1 class="tituloLight" id="titulo">Planner Online</h1>
 
@@ -113,11 +118,17 @@
       </select>
     </div>
 
-    <input type="text" placeholder="Digite sua tarefa aqui" name="input-tarefa" id="input-tarefa" />
+    <input type="text" placeholder="Digite sua tarefa aqui" name="input-tarefa" id="input-tarefa" style="background-color: none;"/>
     <button class="custom-btn btn-3" onclick="adcTarefa()"><span><i class="fa-solid fa-plus"></i></span></button>
+
   </div>
-  <div class="adcObs">
-    <input type="text" placeholder="insira um Observação" id="OBS">
+  <div id="popup" class="popup">
+    <span class="close" onclick="fecharPopup()">&times;</span>
+    <div class="adcObs">
+      <input type="text" placeholder="insira um Observação" id="OBS">
+      <button style="margin-left: 5px; background-color: none;" class="addOBS" id="addOBS"><i class="fa-solid fa-plus"></i></button>
+    </div>
+    <p id="popup-content" ></p>
   </div>
 
   <main>
@@ -132,7 +143,7 @@
       </div>
       <div class="card-body">
         <p class="text-tarefa">Tarefas:</p>
-        <div class="tarefas" id="segunda"></div>
+        <div class="tarefas" id="segunda"><p id="nomeTarefa"></p></div>
         <div class="obs"></div>
       </div>
     </div>
